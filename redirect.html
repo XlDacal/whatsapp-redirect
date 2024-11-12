@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirección a WhatsApp</title>
+  <script>
+    function redirectToWhatsApp() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const phone = urlParams.get('phone');
+      const text = urlParams.get('text');
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${text}`;
+      window.location.href = whatsappUrl;
+    }
+    window.onload = redirectToWhatsApp;
+  </script>
+</head>
+<body>
+  <p>Redirigiendo a WhatsApp...</p>
+</body>
+</html>
